@@ -26,7 +26,7 @@ contract MultiplicationContract {
         require(msg.pubkey() == tvm.pubkey(), 102);
         tvm.accept();
 
-        require(a >= 1 && a <= 10 , 101, "Only 1 - 10 numbers can be used");
+        require(a >= 1 && a <= 10 , 101, "Only 1-10 numbers can be used");
         TotalMult *= a;
     }
 }
