@@ -1,0 +1,57 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "removeElementByIndex",
+			"inputs": [
+				{"name":"queue","type":"string[]"},
+				{"name":"index","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"string[]"}
+			]
+		},
+		{
+			"name": "QueueEntry",
+			"inputs": [
+				{"name":"name","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "QueueExit",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "PeopleInQueue",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"PeopleInQueue","type":"string[]"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"PeopleInQueue","type":"string[]"}
+	]
+}
