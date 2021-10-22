@@ -1,0 +1,62 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addComposition",
+			"inputs": [
+				{"name":"compositionName","type":"string"},
+				{"name":"genre","type":"string"},
+				{"name":"composerName","type":"string"},
+				{"name":"price","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setForSale",
+			"inputs": [
+				{"name":"compositionName","type":"string"},
+				{"name":"price","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "compositions",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"compositionName","type":"string"},{"name":"genre","type":"string"},{"name":"composerName","type":"string"},{"name":"price","type":"uint128"},{"name":"forSale","type":"bool"}],"name":"compositions","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "tokenToOwner",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"tokenToOwner","type":"map(uint256,uint256)"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"currentCompositionKey","type":"uint256"},
+		{"components":[{"name":"compositionName","type":"string"},{"name":"genre","type":"string"},{"name":"composerName","type":"string"},{"name":"price","type":"uint128"},{"name":"forSale","type":"bool"}],"name":"compositions","type":"tuple[]"},
+		{"name":"tokenToOwner","type":"map(uint256,uint256)"}
+	]
+}
