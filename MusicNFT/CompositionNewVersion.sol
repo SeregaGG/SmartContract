@@ -17,13 +17,13 @@ contract Composition {
         string compositionName;
         string genre;
         string composerName;
-        uint128 price;
-        bool forSale;
     }
 
     CompositionToken[] compositions;
 
-    mapping (uint => mapping (uint => uint)) ownerTokens; //address => (key => key)
+    mapping (uint => mapping (uint => uint)) ownerTokens; //address => (key => price)
+
+    mapping (uint => bool) forSale; //key => forSale
 
     modifier checkOwnerAndAccept(string compositionName) {
 
@@ -58,14 +58,15 @@ contract Composition {
 
     function addComposition(string compositionName, string genre, string composerName, uint128 price) public checkUniqueAndAccept(compositionName) {
 
-        compositions.push(CompositionToken(compositionName, genre, composerName, price, false));
-        ownerTokens[msg.pubkey()][compositions.length - 1] = compositions.length - 1;
+        compositions.push(CompositionToken(compositionName, genre, composerName));
+        ownerTokens[msg.pubkey()][compositions.length - 1] = price;
+        forSale[compositions.length - 1] = false;
 
     }
 
     function setForSale(string compositionName, uint128 price) public checkOwnerAndAccept(compositionName){
 
-        compositions[currentCompositionKey].forSale = true;
-        compositions[currentCompositionKey].price = price;
+        forSale[currentCompositionKey] = true;
+        ownerTokens[msg.pubkey()][currentCompositionKey] = price;
     }
 }
