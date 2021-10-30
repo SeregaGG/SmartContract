@@ -1,0 +1,80 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"newBase","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setAttackDmg",
+			"inputs": [
+				{"name":"power","type":"int256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "doAttack",
+			"inputs": [
+				{"name":"enemy","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "sendPrize",
+			"inputs": [
+				{"name":"killer","type":"address"},
+				{"name":"deadFlag","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setDefensePower",
+			"inputs": [
+				{"name":"power","type":"int256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "checkIsDead",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "getAttack",
+			"inputs": [
+				{"name":"dmg","type":"int256"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"defensePower","type":"int256"},
+		{"name":"healthPoints","type":"int256"},
+		{"name":"isDead","type":"bool"},
+		{"name":"homeBase","type":"address"},
+		{"name":"attackDmg","type":"int256"},
+		{"name":"warriorOverDmg","type":"int256"},
+		{"name":"warriorOverHP","type":"int256"}
+	]
+}
